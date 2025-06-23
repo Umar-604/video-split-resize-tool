@@ -33,3 +33,8 @@ def process_single_file(file_path, output_dir):
     print(f"Processing: {file_path}")
     split_and_resize(file_path, output_dir)
 
+def process_folder(folder_path, output_dir):
+    for file in os.listdir(folder_path):
+        if file.lower().endswith('.mp4'):
+            process_single_file(os.path.join(folder_path, file), output_dir)
+
