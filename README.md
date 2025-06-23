@@ -106,9 +106,3 @@ This project is licensed under the **MIT License** – feel free to use, modify,
 Developed by **Umar Tariq**
 Contributions and suggestions are welcome!
 
-```
-
----
-
-Let me know if you want me to generate a `requirements.txt` or a `.gitignore` file for this repo as well.
-```
