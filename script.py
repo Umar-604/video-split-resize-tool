@@ -52,3 +52,6 @@ def main():
     else:
         print("Please provide --file or --folder")
 
+if __name__ == '__main__':
+    main()
+
