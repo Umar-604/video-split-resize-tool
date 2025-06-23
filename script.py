@@ -9,7 +9,7 @@ def split_and_resize(video_path, output_dir, segment_duration=20, resolution=(12
     video = VideoFileClip(str(video_path))
     duration = int(video.duration)
     basename = Path(video_path).stem
-    
+
     os.makedirs(output_dir, exist_ok=True)
 
     for start in range(0, duration, segment_duration):
@@ -17,7 +17,7 @@ def split_and_resize(video_path, output_dir, segment_duration=20, resolution=(12
         part_num = start // segment_duration + 1
         output_filename = f"{basename}_part{part_num:02d}.mp4"
         output_path = os.path.join(output_dir, output_filename)
-        
+
         cmd = [
             'ffmpeg', '-y',
             '-ss', str(start),
@@ -44,7 +44,7 @@ def main():
     parser.add_argument('--folder', type=str, help="Path to folder with .mp4 files")
     parser.add_argument('--output', type=str, default="output_clips", help="Output directory")
     args = parser.parse_args()
-    
+
     if args.file:
         process_single_file(args.file, args.output)
     elif args.folder:
@@ -54,4 +54,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
