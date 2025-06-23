@@ -1,8 +1,3 @@
-Got it, brother! Here's your **actual `README.md` file** — with everything properly formatted. Just copy this entire block and paste it into your `README.md` file:
-
----
-
-````markdown
 # 🎬 Video Split & Resize Tool
 
 A simple Python script to **split large MP4 video files into smaller clips** and **resize** them to a specific resolution. Useful for processing long videos into segments suitable for training data, previews, or optimized playback.
