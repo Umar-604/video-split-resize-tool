@@ -38,3 +38,10 @@ def process_folder(folder_path, output_dir):
         if file.lower().endswith('.mp4'):
             process_single_file(os.path.join(folder_path, file), output_dir)
 
+def main():
+    parser = argparse.ArgumentParser(description="Split and resize videos.")
+    parser.add_argument('--file', type=str, help="Path to a single .mp4 file")
+    parser.add_argument('--folder', type=str, help="Path to folder with .mp4 files")
+    parser.add_argument('--output', type=str, default="output_clips", help="Output directory")
+    args = parser.parse_args()
+
