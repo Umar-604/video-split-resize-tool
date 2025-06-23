@@ -29,3 +29,7 @@ def split_and_resize(video_path, output_dir, segment_duration=20, resolution=(12
         ]
         subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
+def process_single_file(file_path, output_dir):
+    print(f"Processing: {file_path}")
+    split_and_resize(file_path, output_dir)
+
