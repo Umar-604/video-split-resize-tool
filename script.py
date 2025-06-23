@@ -44,4 +44,11 @@ def main():
     parser.add_argument('--folder', type=str, help="Path to folder with .mp4 files")
     parser.add_argument('--output', type=str, default="output_clips", help="Output directory")
     args = parser.parse_args()
+    
+    if args.file:
+        process_single_file(args.file, args.output)
+    elif args.folder:
+        process_folder(args.folder, args.output)
+    else:
+        print("Please provide --file or --folder")
 
