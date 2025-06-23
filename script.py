@@ -17,3 +17,15 @@ def split_and_resize(video_path, output_dir, segment_duration=20, resolution=(12
         part_num = start // segment_duration + 1
         output_filename = f"{basename}_part{part_num:02d}.mp4"
         output_path = os.path.join(output_dir, output_filename)
+        
+        cmd = [
+            'ffmpeg', '-y',
+            '-ss', str(start),
+            '-i', str(video_path),
+            '-t', str(end - start),
+            '-vf', f'scale={resolution[0]}:{resolution[1]}',
+            '-c:a', 'copy',
+            output_path
+        ]
+        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
